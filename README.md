@@ -8,9 +8,47 @@ The project aim to using Hadoop MapReduce to searching the key person in Faceboo
 - Java version 1.8: https://java.com/zh_TW/download/
 - Intellij (optional)
 
-## Running the tests
+## Running in local
 
-running the skyline program with program parameters:  ``input_file_1000.csv Skyline.csv 9 random 3``
+You can import the program in your local directory and test it.
+Using the dataset from input folder:
+```
+ID,Friends_Score,Followee_Score,Like_Score,Group_Score
+0,73,96,86,573
+1,106,77,28,376
+2,66,44,66,563
+3,143,11,9,764
+4,73,30,44,951
+5,113,3,35,752
+6,134,43,50,374
+7,83,27,32,951
+8,132,84,31,376
+9,79,52,6,752
+10,75,67,59,575
+11,65,85,44,575
+12,78,22,75,565
+13,59,8,93,563
+14,104,71,60,575
+15,130,39,51,764
+16,78,29,76,376
+...
+```
+running the skyline program with program parameters in edit configure:  ``input_file_1000.csv Skyline.csv 9 random 3``
+
+## Running in AWS
+The program can test it in AWS as step below:
+1. export the program as a runnable jar
+2. upload the jar folder to the prepared AWS S3 bucket
+3. use prepared AWS EMR to run for the test with the argument below:
+```
+  s3://<your S3 bucket>/transformed_data.csv
+  s3://<your S3 bucket>/Skyline.csv
+  9
+  random
+  3
+```
+4. run and check the result in the S3 bucket
+5. you can view the part-00000 output result
 
 ## Result
 The output folder will generate. The result in folder part-00000 will showed as below:
@@ -31,21 +69,13 @@ ID,Friends_Score ,Followee_Score ,Like_Score ,Group_Score
 0 , 73.0 , 96.0 , 86.0 , 573.0
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Workflow
 
 
 ## Authors
-Chun Ho TSUI (63545880)
-Ao Liu (55203200)
-Guanming HUANG (55199741)
-Kam Hon LAU (55208914)
-Pui Yuen Antony CHOI (55221278)
+- Chun Ho TSUI (63545880)
+- Ao Liu (55203200)
+- Guanming HUANG (55199741)
+- Kam Hon LAU (55208914)
+- Pui Yuen Antony CHOI (55221278)
 
