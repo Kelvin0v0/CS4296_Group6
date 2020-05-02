@@ -68,10 +68,6 @@ ID,Friends_Score ,Followee_Score ,Like_Score ,Group_Score
 23 , 142.0 , 94.0 , 74.0 , 563.0
 0 , 73.0 , 96.0 , 86.0 , 573.0
 ```
-
-## Workflow
-
-
 ## Authors
 - Chun Ho TSUI (63545880)
 - Ao Liu (55203200)
