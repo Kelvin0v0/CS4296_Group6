@@ -33,7 +33,7 @@ ID,Friends_Score,Followee_Score,Like_Score,Group_Score
 16,78,29,76,376
 ...
 ```
-running the skyline program with program parameters in edit configure:  ``input_file_1000.csv Skyline.csv 9 random 3``
+running the skyline program with program parameters in edit configure:  ``input_file_1000.csv Skyline.csv 9 random 4``
 
 ## Running in AWS
 The program can test it in AWS as step below:
