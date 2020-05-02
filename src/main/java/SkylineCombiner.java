@@ -34,7 +34,7 @@ public class SkylineCombiner extends MapReduceBase implements Reducer<IntWritabl
     }
 
     // The Block Nested Loop algorithm for calculating the skyline points
-    // The algorithm also sorts the skyline points iteratively in ascending order.
+    // The algorithm also sorts the skyline points iteratively in decending order.
     private ArrayList<ArrayList<Double>> BNL(Iterator<Text> values, OutputCollector<IntWritable, Text> outputCollector) throws IOException{
         ArrayList<ArrayList<Double>> ApList = new ArrayList<ArrayList<Double>>();
         int sortingIndex;
