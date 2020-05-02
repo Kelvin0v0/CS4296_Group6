@@ -45,7 +45,7 @@ The program can test it in AWS as step below:
   s3://<your S3 bucket>/Skyline.csv
   9
   random
-  3
+  4
 ```
 4. run and check the result in the S3 bucket
 5. you can view the part-00000 output result
