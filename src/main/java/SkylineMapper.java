@@ -34,43 +34,8 @@ public class SkylineMapper extends MapReduceBase implements Mapper<LongWritable,
     }
 
     public int partition(String line){
-        if(parTech.equals("random")){
             // In case of random partitioning, choose an int key between [0,partitions-1]
             return rnd.nextInt(Splits);
-        }
-        else{
-            // Case of angle based partitioning
-            String[] bounds=Bounds.split(",");
-            String[] splits=line.split(",");
-            ///////////////////////// Partition the tuple using the bounds passed to the mapper ////////////////////////
-            if(Dimensions==2){ // Using 2 dimensions
-                int count=0;
-                Double f1=Math.atan((Double.parseDouble(splits[2])/Double.parseDouble(splits[1])));
-                for(String split:bounds){
-                    if(f1<=Double.parseDouble(split)){
-                        return count;
-                    }
-                    count++;
-                }
-                return count;
-            }else{ // Using 3 dimensions
-                Double f1=Math.atan(Math.sqrt(Math.pow(Double.parseDouble(splits[3]),2)+Math.pow(Double.parseDouble(splits[2]),2))/Double.parseDouble(splits[1]));
-                Double f2=Math.atan((Double.parseDouble(splits[3])/Double.parseDouble(splits[2])));
-                int i,j;
-                for(i=0;i<2;i++){
-                    if(f1<=Double.parseDouble(bounds[i])){
-                        break;
-                    }
-                }
-                for(j=0;j<2;j++){
-                    if(f2<=Double.parseDouble(bounds[2+j])){
-                        return i+3*j;
-                    }
-                }
-                return i+3*j;
-            }
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-        }
     }
 
     // Reading the arguments of the MapReduce Job

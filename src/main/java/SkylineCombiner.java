@@ -67,14 +67,15 @@ public class SkylineCombiner extends MapReduceBase implements Reducer<IntWritabl
                 for(int i=0;i<ApList.size();i++){
                     int count=0;
                     if(Apartment.get(0)<ApList.get(i).get(0))
-//                        if(Apartment.get(0)>ApList.get(i).get(0))
                         sortingIndex++;
                     for(int j=1;j<=Dimensions;j++){
                         if(Apartment.get(j)>ApList.get(i).get(j))
-//                            if(Apartment.get(j)<ApList.get(i).get(j))
                             count++;
                     }
                     if(count==0){
+                        ArrayList<Double> temp=ApList.get(i);
+                        ApList.remove(i);
+                        ApList.add(0, temp);
                         break;
                     }else{
                         if(count==Dimensions){
