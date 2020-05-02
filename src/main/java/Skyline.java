@@ -37,8 +37,8 @@ public class Skyline {
         job.setJarByClass(Skyline.class);
         job.setJobName("SkylineQueriesJob");
 
-        FileInputFormat.setInputPaths(job, new Path("./input")); // Declaring input path of job
-        FileOutputFormat.setOutputPath(job, new Path("./output")); // Declaring output path of job
+        FileInputFormat.setInputPaths(job, new Path(args[0])); // Declaring input path of job
+        FileOutputFormat.setOutputPath(job, new Path(args[1])); // Declaring output path of job
 
         job.set("splits",args[2]); // Declaring the number of partitions as a job argument
         job.set("partitioningTechnique",args[3]); // Declaring the partitioning technique as a job argument
