@@ -69,7 +69,7 @@ ID,Friends_Score ,Followee_Score ,Like_Score ,Group_Score
 0 , 73.0 , 96.0 , 86.0 , 573.0
 ```
 ## Authors
-- Chun Ho TSUI (63545880)
+- Chun Ho TSUI (54814074)
 - Ao Liu (55203200)
 - Guanming HUANG (55199741)
 - Kam Hon LAU (55208914)
